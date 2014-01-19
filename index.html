@@ -4,6 +4,7 @@
 <head>
 	<title>WC Shoot Out</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="img/favicon.ico" rel="icon" type="image/x-icon" />
 	<script type="text/javascript" src="script.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
 </head>
@@ -11,8 +12,8 @@
 	<div id="gameplay" x-ng-init="" x-ng-controller="gameplay">	
 		
 <body><div id="scoreboardtop">
-			<div class="homescore"><strong>Home</strong></div>
-			<div class="awayscore"><strong>Away</strong></div>
+			<div class="homescore"><strong>Home Score:   </strong>{{homescorecount}}</div>
+			<div class="awayscore"><strong>Away Score:   </strong>{{awayscorecount}}</div>
 		</div>
 		
 		<div id="scoreboardbottom">

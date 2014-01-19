@@ -1,84 +1,141 @@
+hometurn = true;
+homescorecount = 0;
+awayscorecount = 0;
+
 function gameplay($scope) {
+
+	$scope.aim = [left, center, right];
+
+	$scope.kickerChoice = "";
+	$scope.goalieChoice = Math.random();
+
+	$scope.score = [
+		['','','','',''],
+		['','','','','']
+	];
+
+	//home team kicks first
+	$scope.hometurn = true;
+	$scope.homescorecount = 0;
+	$scope.awayscorecount = 0;
 
 	alert("Home Team Kicks First");
 
-	//home team kicks first
-	var home = true;
-
-	var aim = [left, center, right]
-
-	var kickerChoice;
-	var goalieChoice;
-
-// angular.element( document.getElementsByTagName("li")[1]).scope()
 	$scope.leftShot = function() {
-		kickerChoice = "left";
-		goalieChoice = Math.random();
+		console.log($scope.hometurn);
+		//kicker and goalie choices
+		$scope.kickerChoice = "left";
+		$scope.goalieChoice = Math.random();
 
-		if (goalieChoice < 0.34) {
-			goalieChoice = "left";
+		if ($scope.goalieChoice < 0.34) {
+			$scope.goalieChoice = "left";
 		}
-		else if(goalieChoice <= 0.67) {
-			goalieChoice = "center";
+		else if($scope.goalieChoice <= 0.67) {
+			$scope.goalieChoice = "center";
 		}
 		else {
-			goalieChoice = "right";
+			$scope.goalieChoice = "right";
 		}
 	   
-	    if (kickerChoice === goalieChoice) {
-	        alert("What a save!");
-	        }
-	   	else {
-	    	alert("Gooooooooool!");
-		}
-	}
+	   //win condition
+	   
+    	if ($scope.kickerChoice === $scope.goalieChoice) {
+        	alert("What a save!");
+        	$scope.hometurn = !$scope.hometurn;
+        }
+   		else {
+    		alert("Gooooooooool!");
 
-		$scope.centerShot = function() {
-		kickerChoice = "center";
-		goalieChoice = Math.random();
+		//upon win condition
+		    if ($scope.hometurn == true) {
+				$scope.homescorecount++;
+				$scope.hometurn = !$scope.hometurn;
+			} else {
+				$scope.awayscorecount++;
+				$scope.hometurn = !$scope.hometurn;
+				alert('');
+		 	}
+		 } 	
+		    
+		    console.log($scope.homescorecount);
+		    console.log($scope.awayscorecount);	
+		    console.log($scope.hometurn);
 		
-		if (goalieChoice < 0.34) {
-			goalieChoice = "left";
-		}
-		else if(goalieChoice <= 0.67) {
-			goalieChoice = "center";
-		}
+	}
+	
+	$scope.centerShot = function() {
+	$scope.kickerChoice = "center";
+	$scope.goalieChoice = Math.random();
+	
+	if ($scope.goalieChoice < 0.34) {
+		$scope.goalieChoice = "left";
+	}
+	else if($scope.goalieChoice <= 0.67) {
+		$scope.goalieChoice = "center";
+	}
+	else {
+		$scope.goalieChoice = "right";
+	}
+   
+    if ($scope.kickerChoice === $scope.goalieChoice) {
+        alert("What a save!");
+        	$scope.hometurn = !$scope.hometurn;
+    }
 		else {
-			goalieChoice = "right";
-		}
-	   
-	    if (kickerChoice === goalieChoice) {
-	        alert("What a save!");
-	        }
-	   	else {
-	    	alert("Gooooooooool!");
-		}
+		alert("Gooooooooool!");
+
+	//upon win condition
+	    if ($scope.hometurn == true) {
+			$scope.homescorecount++;
+			$scope.hometurn = !$scope.hometurn;
+		} else {
+			$scope.awayscorecount++;
+			$scope.hometurn = !$scope.hometurn;
+			alert('');
+	 	}
+	 } 	
+	    
+	    console.log($scope.homescorecount);
+	    console.log($scope.awayscorecount);	
+	    console.log($scope.hometurn);
 	}
 
-		$scope.rightShot = function() {
-		kickerChoice = "right";
-		goalieChoice = Math.random();
-		
-		if (goalieChoice < 0.34) {
-			goalieChoice = "left";
-		}
-		else if(goalieChoice <= 0.67) {
-			goalieChoice = "center";
-		}
-		else {
-			goalieChoice = "right";
-		}
-	   
-	    if (kickerChoice === goalieChoice) {
-	        alert("What a save!");
-	        }
-	   	else {
-	    	alert("Gooooooooool!");
-		}
+	$scope.rightShot = function() {
+	$scope.kickerChoice = "right";
+	$scope.goalieChoice = Math.random();
+	
+	if ($scope.goalieChoice < 0.34) {
+		$scope.goalieChoice = "left";
 	}
+	else if($scope.goalieChoice <= 0.67) {
+		$scope.goalieChoice = "center";
+	}
+	else {
+		$scope.goalieChoice = "right";
+	}
+   
+    if ($scope.kickerChoice === $scope.goalieChoice) {
+        alert("What a save!");
+        	$scope.hometurn = !$scope.hometurn;
+    	}
+		else {
+		alert("Gooooooooool!");
 
-	home != home;
-
+	//upon win condition
+	    if ($scope.hometurn == true) {
+			$scope.homescorecount++;
+			$scope.hometurn = !$scope.hometurn;
+		} else {
+			$scope.awayscorecount++;
+			$scope.hometurn = !$scope.hometurn;
+			alert('');
+	 	}
+	 } 	
+	    
+	    console.log($scope.homescorecount);
+	    console.log($scope.awayscorecount);	
+	    console.log($scope.hometurn);
+	}
 }
 
 
