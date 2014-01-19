@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html x-ng-app="">
+<head>
+	<title>WC Shoot Out</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+</head>
+	<h1>World Cup Shoot Out</h1>
+	<div id="gameplay" x-ng-init="" x-ng-controller="gameplay">	
+		
+<body><div id="scoreboardtop">
+			<div class="homescore"><strong>Home</strong></div>
+			<div class="awayscore"><strong>Away</strong></div>
+		</div>
+		
+		<div id="scoreboardbottom">
+			<div class="homescore">
+				<div class="score" id="home0"></div>
+				<div class="score" id="home1"></div>
+				<div class="score" id="home2"></div>
+				<div class="score" id="home3"></div>
+				<div class="score" id="home4"></div>
+			</div>
+			<div class="awayscore">
+				<div class="score" id="away0"></div>
+				<div class="score" id="away1"></div>
+				<div class="score" id="away2"></div>
+				<div class="score" id="away3"></div>
+				<div class="score" id="away4"></div>
+			</div>
+		</div>
+
+		<div id="gameboard">
+			<div class="aim" id="left" x-ng-click="leftShot()" ></div>
+			<div class="aim" id="center" x-ng-click="centerShot()" ></div>
+			<div class="aim" id="right" x-ng-click="rightShot()" ></div>
+		</div>
+	</div>
+
+</body>
+</html>
