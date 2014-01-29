@@ -8,28 +8,29 @@
 	<script type="text/javascript" src="script.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
 </head>
+	<body>
 	<h1>World Cup Shoot Out</h1>
 	<div id="gameplay" x-ng-init="" x-ng-controller="gameplay">	
 		
-<body><div id="scoreboardtop">
+	<div id="scoreboardtop">
 			<div class="homescore"><strong>Home Score:   </strong>{{homescorecount}}</div>
 			<div class="awayscore"><strong>Away Score:   </strong>{{awayscorecount}}</div>
 		</div>
 		
 		<div id="scoreboardbottom">
 			<div class="homescore">
-				<div class="score" id="home0"></div>
-				<div class="score" id="home1"></div>
-				<div class="score" id="home2"></div>
-				<div class="score" id="home3"></div>
-				<div class="score" id="home4"></div>
+				<div x-ng-class="{score:homegol0, placeholder:true}" id="home0"></div>
+				<div x-ng-class="{score:homegol1, placeholder:true}" id="home1"></div>
+				<div x-ng-class="{score:homegol2, placeholder:true}" id="home2"></div>
+				<div x-ng-class="{score:homegol3, placeholder:true}" id="home3"></div>
+				<div x-ng-class="{score:homegol4, placeholder:true}" id="home4"></div>
 			</div>
 			<div class="awayscore">
-				<div class="score" id="away0"></div>
-				<div class="score" id="away1"></div>
-				<div class="score" id="away2"></div>
-				<div class="score" id="away3"></div>
-				<div class="score" id="away4"></div>
+				<div x-ng-class="{score:awaygol0, placeholder:true}" id="away0"></div>
+				<div x-ng-class="{score:awaygol1, placeholder:true}" id="away1"></div>
+				<div x-ng-class="{score:awaygol2, placeholder:true}" id="away2"></div>
+				<div x-ng-class="{score:awaygol3, placeholder:true}" id="away3"></div>
+				<div x-ng-class="{score:awaygol4, placeholder:true}" id="away4"></div>
 			</div>
 		</div>
 
