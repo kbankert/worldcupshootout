@@ -4,6 +4,8 @@ homekickcount = 0;
 awaykickcount = 0;
 homescorecount = 0;
 awayscorecount = 0;
+remaininghomeshots = 5;
+remainingawayshots = 5;
 
 function gameplay($scope) {
 
@@ -23,6 +25,8 @@ function gameplay($scope) {
 	$scope.awaykickcount = 0;
 	$scope.homescorecount = 0;
 	$scope.awayscorecount = 0;
+	$scope.remaininghomeshots = 5;
+	$scope.remainingawayshots = 5;
 
 	$scope.homegol0 = false;
 	$scope.homegol1 = false;
@@ -60,9 +64,11 @@ function gameplay($scope) {
 	        alert("What a save!");
 			 	if ($scope.hometurn == true) {
 					$scope.homekickcount++;
+					$scope.remaininghomeshots--;
 				}
 				else {
 					$scope.awaykickcount++;
+					$scope.remainingawayshots--;
 				}
    		}
    		else {
@@ -73,11 +79,13 @@ function gameplay($scope) {
 				$scope.fillInHomeScore();
 				$scope.homescorecount++;
 				$scope.homekickcount++;
+				$scope.remaininghomeshots--;
 
 			} else {
 				$scope.fillInAwayScore();
 				$scope.awayscorecount++;
 				$scope.awaykickcount++;
+				$scope.remainingawayshots--;
 		 	}
 		 } 	
 		    
@@ -108,9 +116,11 @@ function gameplay($scope) {
 	        alert("What a save!");
 			 	if ($scope.hometurn == true) {
 					$scope.homekickcount++;
+					$scope.remaininghomeshots--;
 				}
 				else {
 					$scope.awaykickcount++;
+					$scope.remainingawayshots--;
 				}
 	    }
 		else {
@@ -121,10 +131,12 @@ function gameplay($scope) {
 				$scope.fillInHomeScore();
 				$scope.homescorecount++;
 				$scope.homekickcount++;
+				$scope.remaininghomeshots--;
 			} else {
 				$scope.fillInAwayScore();
 				$scope.awayscorecount++;
 				$scope.awaykickcount++;
+				$scope.remainingawayshots--;
 
 	 		}
 		 } 	
@@ -155,9 +167,11 @@ function gameplay($scope) {
 	        alert("What a save!");
 		 	if ($scope.hometurn) {
 				$scope.homekickcount++;
+				$scope.remaininghomeshots--;
 			}
 			else {
 				$scope.awaykickcount++;
+				$scope.remainingawayshots--;
 			}
 
     	}
@@ -169,10 +183,12 @@ function gameplay($scope) {
 				$scope.fillInHomeScore();
 				$scope.homescorecount++;
 				$scope.homekickcount++;
+				$scope.remaininghomeshots--;
 			} else {
 				$scope.fillInAwayScore();
 				$scope.awayscorecount++;
 				$scope.awaykickcount++;
+				$scope.remainingawayshots--;
 	 		}
 		 } 	
 	    
