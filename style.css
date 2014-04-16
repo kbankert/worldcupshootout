@@ -10,13 +10,43 @@ h1 {
 	font-size: 54px;
 	text-align: center;
 	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	margin-top: 0px;
+	margin-bottom: 5px;
 }
 
-p {
+p#instructions {
 	color: black;
-	font-size: 24px;
+	width: 526px;
+	background-color: #FCDC3B;
+	opacity: .8;
+	font-size: 16px;
+	margin: 0 auto;
 	text-align: center;
-	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	border: 1px solid #FCDC3B;
+}
+
+div#clear_div {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+#clear {
+  width: 125px;
+  height: 25px;
+  font-size: 12px;
+  text-align: center;
+  background-color: #FCDC3B;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-top: 2px;
+  margin: 0 auto;
+  color: black;
+}
+
+#clear:hover {
+  background-color: green;
+  color: white;
+  border: 1px solid white;
 }
 
 span.team_name {

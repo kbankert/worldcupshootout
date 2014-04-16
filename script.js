@@ -6,6 +6,9 @@ homescorecount = 0;
 awayscorecount = 0;
 remaininghomeshots = 5;
 remainingawayshots = 5;
+var winner;
+var hometeam_wins;
+var awayteam_wins;
 
 function gameplay($scope) {
 
@@ -86,14 +89,15 @@ function gameplay($scope) {
 				$scope.remainingawayshots--;
 		 	}
 		 } 	
-		    
+		
+		$scope.winGame();
 		$scope.hometurn = !$scope.hometurn;
 
-	    console.log("homekickcount: " + $scope.homekickcount);
-	    console.log("awaykickcount: " + $scope.awaykickcount);
-	    console.log("homescore: " + $scope.homescorecount);
-	    console.log("awayscore: " + $scope.awayscorecount);	
-	    console.log("home turn? " + $scope.hometurn);	
+	    // console.log("homekickcount: " + $scope.homekickcount);
+	    // console.log("awaykickcount: " + $scope.awaykickcount);
+	    // console.log("homescore: " + $scope.homescorecount);
+	    // console.log("awayscore: " + $scope.awayscorecount);	
+	    // console.log("home turn? " + $scope.hometurn);	
 	}
 	
 	$scope.centerShot = function() {
@@ -125,26 +129,27 @@ function gameplay($scope) {
 		alert("Gooooooooool!");
 
 	//upon win condition
-		    if ($scope.hometurn == true) {
+	    if ($scope.hometurn == true) {
 				$scope.fillInHomeScore();
 				$scope.homescorecount++;
 				$scope.homekickcount++;
 				$scope.remaininghomeshots--;
-			} else {
+			}
+			else {
 				$scope.fillInAwayScore();
 				$scope.awayscorecount++;
 				$scope.awaykickcount++;
 				$scope.remainingawayshots--;
-
 	 		}
-		 } 	
+	 	} 
+		$scope.winGame();
 		$scope.hometurn = !$scope.hometurn;
 
-	    console.log("homekickcount: " + $scope.homekickcount);
-	    console.log("awaykickcount: " + $scope.awaykickcount);
-	    console.log("homescore: " + $scope.homescorecount);
-	    console.log("awayscore: " + $scope.awayscorecount);	
-	    console.log("home turn? " + $scope.hometurn);
+	    // console.log("homekickcount: " + $scope.homekickcount);
+	    // console.log("awaykickcount: " + $scope.awaykickcount);
+	    // console.log("homescore: " + $scope.homescorecount);
+	    // console.log("awayscore: " + $scope.awayscorecount);	
+	    // console.log("home turn? " + $scope.hometurn);
 	}
 
 	$scope.rightShot = function() {
@@ -177,26 +182,27 @@ function gameplay($scope) {
 		alert("Gooooooooool!");
 
 	//upon win condition
-		    if ($scope.hometurn) {
+	    if ($scope.hometurn) {
 				$scope.fillInHomeScore();
 				$scope.homescorecount++;
 				$scope.homekickcount++;
 				$scope.remaininghomeshots--;
-			} else {
+			}
+			else {
 				$scope.fillInAwayScore();
 				$scope.awayscorecount++;
 				$scope.awaykickcount++;
 				$scope.remainingawayshots--;
 	 		}
 		 } 	
-	    
+	  $scope.winGame();
 		$scope.hometurn = !$scope.hometurn;
 
-	    console.log("homekickcount: " + $scope.homekickcount);
-	    console.log("awaykickcount: " + $scope.awaykickcount);
-	    console.log("homescore: " + $scope.homescorecount);
-	    console.log("awayscore: " + $scope.awayscorecount);	
-	    console.log("home turn? " + $scope.hometurn);
+	    // console.log("homekickcount: " + $scope.homekickcount);
+	    // console.log("awaykickcount: " + $scope.awaykickcount);
+	    // console.log("homescore: " + $scope.homescorecount);
+	    // console.log("awayscore: " + $scope.awayscorecount);	
+	    // console.log("home turn? " + $scope.hometurn);
 
 	}
 
@@ -237,6 +243,20 @@ function gameplay($scope) {
 		}
 		else if ($scope.awaykickcount == 4) {
 			$scope.awaygol4 = !$scope.awaygol4;
+		}
+		else {
+			false
+		}
+	}
+
+	$scope.winGame = function() {
+		if ($scope.homescorecount > ($scope.awayscorecount + $scope.remainingawayshots)) {
+			winner = hometeam_wins;
+			alert("Home Team Wins!")
+		}
+		else if ($scope.awayscorecount > ($scope.homescorecount + $scope.remaininghomeshots)) {
+			winner = awayteam_wins;
+			alert("Away Team Wins!")
 		}
 		else {
 			false

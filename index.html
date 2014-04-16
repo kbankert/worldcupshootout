@@ -10,9 +10,8 @@
 </head>
 	<body>
 	<h1>World Cup Shoot Out</h1>
-	<p><strong>Home Team Kicks First<strong></p>
+	<p id="instructions"><strong>Home Team Kicks First<strong></p>
 	<div id="gameplay" x-ng-init="" x-ng-controller="gameplay">	
-		
 	<div id="scoreboardtop">
 			<div class="homescore"><span class="team_name"><strong>Home Team</strong></span><br /><span class="remaining_shots">Remaining Shots: {{remaininghomeshots}}</span></div>
 			<div class="awayscore"><span class="team_name"><strong>Away Team</strong></span><br /><span class="remaining_shots">Remaining Shots: {{remainingawayshots}}</span></div>
@@ -41,6 +40,6 @@
 			<div class="aim" id="right" x-ng-click="rightShot()" ></div>
 		</div>
 	</div>
-
+	<div id="clear_div"><input type= "button" value="Start New Game" id="clear" onclick="window.location.href=window.location.href"></div>
 </body>
 </html>
