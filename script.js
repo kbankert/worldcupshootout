@@ -40,8 +40,6 @@ function gameplay($scope) {
 	$scope.awaygol3 = false;
 	$scope.awaygol4 = false;
 
-	alert("Home Team Kicks First");
-
 	$scope.leftShot = function() {
 		console.log($scope.hometurn);
 		//kicker and goalie choices
