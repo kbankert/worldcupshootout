@@ -253,10 +253,12 @@ function gameplay($scope) {
 		if ($scope.homescorecount > ($scope.awayscorecount + $scope.remainingawayshots)) {
 			winner = hometeam_wins;
 			alert("Home Team Wins!")
+			alert("Game Over. Click Start New Game to continue playing.")
 		}
 		else if ($scope.awayscorecount > ($scope.homescorecount + $scope.remaininghomeshots)) {
 			winner = awayteam_wins;
 			alert("Away Team Wins!")
+			alert("Game Over. Click Start New Game to continue playing.")
 		}
 		else {
 			false
