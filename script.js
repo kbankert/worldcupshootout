@@ -260,6 +260,10 @@ function gameplay($scope) {
 			alert("Away Team Wins!")
 			alert("Game Over. Click Start New Game to continue playing.")
 		}
+		else if ($scope.awayscorecount == $scope.homescorecount && $scope.remainingawayshots == 0 && $scope.remaininghomeshots == 0) {
+			alert("We're headed to the second round!")
+			location.reload();
+		}
 		else {
 			false
 		}
