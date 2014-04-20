@@ -1,8 +1,9 @@
 body {
-	background: url("https://c1.staticflickr.com/3/2020/2520750869_ee43286723_z.jpg?zz=1");
+	background: url("img/background.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	font-family: "Century Gothic";
+	background-color: black;
 }
 
 h1#instructions {
@@ -30,17 +31,15 @@ div#clear_div {
   font-size: 12px;
   text-align: center;
   background-color: #FCDC3B;
-  border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 0px;
+  border: none;
   padding-top: 2px;
   margin: 0 auto;
   color: black;
 }
 
 #clear:hover {
-  background-color: green;
-  color: white;
-  border: 1px solid white;
+	opacity: .8;
 }
 
 span.team_name {
