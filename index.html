@@ -9,12 +9,11 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
 </head>
 	<body>
-	<h1>World Cup Shoot Out</h1>
-	<p id="instructions"><strong>Home Team Kicks First<strong></p>
+	<h1 id="instructions"><strong>World Cup Shoot Out</strong></h1>
 	<div id="gameplay" x-ng-init="" x-ng-controller="gameplay">	
 	<div id="scoreboardtop">
-			<div class="homescore"><span class="team_name"><strong>Home Team</strong></span><br /><span class="remaining_shots">Remaining Shots: {{remaininghomeshots}}</span></div>
-			<div class="awayscore"><span class="team_name"><strong>Away Team</strong></span><br /><span class="remaining_shots">Remaining Shots: {{remainingawayshots}}</span></div>
+			<div class="homescore"><span class="team_name">Home Team</span><br /><span class="remaining_shots">Remaining Shots: {{remaininghomeshots}}</span></div>
+			<div class="awayscore"><span class="team_name">Away Team</span><br /><span class="remaining_shots">Remaining Shots: {{remainingawayshots}}</span></div>
 		</div>
 		
 		<div id="scoreboardbottom">
